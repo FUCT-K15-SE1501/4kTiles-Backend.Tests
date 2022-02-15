@@ -31,6 +31,7 @@ namespace _4kTiles_Backend.Tests.Tests.Base
         {
             lock (Locker)
             {
+                if (Context != null) return;
                 Accounts = new List<Account>()
                 {
                     new Account()
