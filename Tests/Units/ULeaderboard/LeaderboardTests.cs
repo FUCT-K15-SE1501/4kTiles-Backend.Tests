@@ -1,15 +1,14 @@
 using System.Collections.Generic;
-using System.Text.Json;
 
 using _4kTiles_Backend.Context;
 using _4kTiles_Backend.DataObjects.DTO.LeaderboardDTO;
 using _4kTiles_Backend.Services.Repositories;
 using _4kTiles_Backend.Tests.Helpers;
-using _4kTiles_Backend.Tests.TestCases.Base;
+using _4kTiles_Backend.Tests.Tests.Base;
 
 using NUnit.Framework;
 
-namespace _4kTiles_Backend.Tests.TestCases.Units.ULeaderboard
+namespace _4kTiles_Backend.Tests.Tests.Units.ULeaderboard
 {
     [TestFixture]
     public class LeaderboardTests
@@ -20,8 +19,7 @@ namespace _4kTiles_Backend.Tests.TestCases.Units.ULeaderboard
         [OneTimeSetUp]
         public void Setup()
         {
-            _context = new BaseTest().Context;
-            _context.Database.EnsureCreated();
+            _context = BaseTest.Context;
             
             _leaderboardRepository = new LeaderboardRepository(_context);
         }
